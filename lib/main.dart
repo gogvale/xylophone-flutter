@@ -27,7 +27,7 @@ void playSound(int i) {
   player.play('note$i.wav');
 }
 
-List<SizedBox> _notes(int count) {
+List<Expanded> _notes(int count) {
   final colorList = [
     Colors.redAccent,
     Colors.orangeAccent,
@@ -39,12 +39,10 @@ List<SizedBox> _notes(int count) {
   ];
   return List.generate(
     count,
-    (i) => SizedBox(
-      height:
-          // TODO: Get screen height properly
-          (WidgetsBinding.instance.window.physicalSize.height * 0.367) / count,
+    (i) => Expanded(
       child: TextButton(
         onPressed: () => playSound(i + 1),
+        child: Text(""),
         style: ButtonStyle(
           backgroundColor: MaterialStateProperty.all(colorList[i]),
           padding: MaterialStateProperty.all(EdgeInsets.zero),

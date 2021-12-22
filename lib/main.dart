@@ -27,7 +27,7 @@ void playSound(int i) {
   player.play('note$i.wav');
 }
 
-List<Expanded> _notes(int count) {
+List<Widget> _notes(int count) {
   final colorList = [
     Colors.redAccent,
     Colors.orangeAccent,
